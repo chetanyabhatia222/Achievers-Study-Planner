@@ -627,7 +627,7 @@
             <h4>App</h4>
             <a href="#" id="footer-login-link">Log In</a>
             <a href="#" id="footer-signup-link">Sign Up Free</a>
-            <a href="index.html">Dashboard</a>
+            <a href="homepage.html">Dashboard</a>
             <a href="tasks.html">My Tasks</a>
         </div>
         <div class="lp-footer-col">
@@ -726,7 +726,7 @@
 <script>
     // Redirect if already logged in
     (function () {
-        if (localStorage.getItem('achievers_current_user')) window.location.href = 'index.html';
+        if (localStorage.getItem('achievers_current_user')) window.location.href = 'homepage.html';
     })();
 
     // ---- User store helpers ----
@@ -791,7 +791,7 @@
         if(!user){ showError('login-error','No account found with that email. Please sign up first.'); return; }
         if(user.password!==password){ showError('login-error','Incorrect password. Please try again.'); return; }
         setCurrentUser(user);
-        window.location.href='index.html';
+        window.location.href='homepage.html';
     }
     document.getElementById('login-submit-btn').addEventListener('click', doLogin);
     document.getElementById('login-password').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
@@ -815,7 +815,7 @@
         var users=getUsers();
         var newUser={name:name,email:email,password:password,contact:contact};
         users.push(newUser); saveUsers(users); setCurrentUser(newUser);
-        window.location.href='index.html';
+        window.location.href='homepage.html';
     }
     document.getElementById('signup-submit-btn').addEventListener('click', doSignup);
     document.getElementById('signup-password').addEventListener('keydown', function(e){ if(e.key==='Enter') doSignup(); });
