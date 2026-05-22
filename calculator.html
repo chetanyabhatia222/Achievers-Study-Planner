@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator - Achievers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2 class="logo">Achievers</h2>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <span class="theme-icon" id="theme-icon">&#9790;</span>
+                </button>
+            </div>
+
+            <a href="profile.html" class="user-profile-section" id="user-profile-section">
+                <div class="user-avatar" id="user-avatar">CB</div>
+                <div class="user-details">
+                    <strong id="sidebar-username">Student</strong>
+                    <span class="user-details-email">View Profile</span>
+                </div>
+                <span class="profile-chevron">&#8250;</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <span class="sidebar-nav-label">Menu</span>
+                <a href="index.html" class="nav-link" data-page="index">
+                    <span class="nav-link-icon">&#8962;</span>Dashboard
+                </a>
+                <a href="tasks.html" class="nav-link" data-page="tasks">
+                    <span class="nav-link-icon">&#10003;</span>My Tasks
+                </a>
+                <a href="timetable.html" class="nav-link" data-page="timetable">
+                    <span class="nav-link-icon">&#9783;</span>Timetable
+                </a>
+                <a href="notes.html" class="nav-link" data-page="notes">
+                    <span class="nav-link-icon">&#9998;</span>Notes
+                </a>
+                <a href="calculator.html" class="nav-link active" data-page="calculator">
+                    <span class="nav-link-icon">&#8721;</span>Calculator
+                </a>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="login.html" class="sidebar-logout-btn" id="logout-link">
+                <span class="nav-link-icon">&#10148;</span>Logout
+            </a>
+
+            <div class="widget grades-widget">
+                <h3>Current GPA</h3>
+                <div class="gpa-display">
+                    <span class="gpa-score" id="gpa-score">--</span>
+                    <span class="gpa-label">/ 10.0</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="calc-page-header">
+                <h1>GPA Calculator</h1>
+                <p>Enter your marks (out of 100) for each subject to calculate your GPA.</p>
+            </div>
+
+            <div class="calc-form-card">
+                <div class="card-header">Subjects &amp; Marks</div>
+                <!-- Built dynamically by calculator.js from shared subject list -->
+                <div id="calc-subjects-container"></div>
+                <div class="calc-add-row" id="calc-no-subjects" style="display:none;">
+                    <p style="color:var(--text-secondary);font-size:0.88rem;padding:0.5rem 0;">
+                        No subjects added yet. Go to <a href="tasks.html" style="color:#3498db;">My Tasks</a> to add subjects first.
+                    </p>
+                </div>
+            </div>
+
+            <div class="calc-action-row">
+                <button class="calc-submit-btn" id="calc-submit">Calculate GPA</button>
+            </div>
+
+            <!-- Results (hidden initially) -->
+            <div class="calc-result-card hidden" id="calc-result-card">
+                <div class="calc-result-header">
+                    <span class="calc-result-gpa" id="calc-gpa">0.00</span>
+                    <div class="calc-result-label">Your GPA out of 10.0</div>
+                </div>
+                <div class="calc-result-body" id="calc-breakdown"></div>
+            </div>
+
+            <!-- Grade Scale Reference -->
+            <div class="grade-scale-card">
+                <h3>Grade Scale Reference</h3>
+                <div class="grade-scale-grid">
+                    <div class="grade-scale-item grade-o">O (10)<span>90 - 100</span></div>
+                    <div class="grade-scale-item grade-a-plus">A+ (9)<span>80 - 89</span></div>
+                    <div class="grade-scale-item grade-a">A (8)<span>70 - 79</span></div>
+                    <div class="grade-scale-item grade-b-plus">B+ (7)<span>60 - 69</span></div>
+                    <div class="grade-scale-item grade-b">B (6)<span>50 - 59</span></div>
+                    <div class="grade-scale-item grade-c">C (5)<span>40 - 49</span></div>
+                    <div class="grade-scale-item grade-f">F (0)<span>Below 40</span></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 <strong>Achievers</strong> Academic. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>

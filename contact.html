@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Achievers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <a href="index.html" class="back-btn">&#8592; Back to Dashboard</a>
+            <h1>Contact Us</h1>
+        </header>
+
+        <div class="page-body">
+            <div class="page-card">
+                <h2>Get in Touch</h2>
+                <p>Have a question, suggestion, or found a bug? We'd love to hear from you!</p>
+
+                <form class="contact-form" id="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your Message..." required></textarea>
+                    <button type="submit" class="contact-submit-btn">Send Message</button>
+                </form>
+
+                <p class="save-msg hidden" id="contact-success" style="margin-top: 1rem;">
+                    Message sent successfully! We'll get back to you soon.
+                </p>
+            </div>
+
+            <div class="page-card">
+                <h2>Other Ways to Reach Us</h2>
+                <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <div class="icon">&#9993;</div>
+                        <strong>Email</strong>
+                        <span>support@achievers.edu</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon">&#9742;</div>
+                        <strong>Phone</strong>
+                        <span>+91 78142 85705</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon">&#9906;</div>
+                        <strong>Address</strong>
+                        <span>Chitkara University, Punjab</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon">&#9201;</div>
+                        <strong>Hours</strong>
+                        <span>Mon - Fri, 9AM - 6PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p>&copy; 2026 <strong>Achievers</strong> Academic. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        var theme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', theme);
+
+        document.getElementById('contact-form').onsubmit = function(e) {
+            e.preventDefault();
+            this.reset();
+            var msg = document.getElementById('contact-success');
+            msg.classList.remove('hidden');
+            setTimeout(function() { msg.classList.add('hidden'); }, 4000);
+        };
+    </script>
+</body>
+</html>

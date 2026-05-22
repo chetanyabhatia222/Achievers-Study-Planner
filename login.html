@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievers – Student Academic Planner</title>
+    <meta name="description" content="Achievers helps students manage tasks, track GPA, plan timetables, and stay organised — all saved locally, no account setup needed.">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<!-- ====================================================
+     NAVBAR
+===================================================== -->
+<nav class="lp-nav">
+    <div class="lp-logo">Achievers</div>
+    <div class="lp-nav-center">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#why">Why Achievers</a>
+    </div>
+    <div class="lp-nav-actions">
+        <button class="lp-btn-outline" id="nav-login-btn">Log In</button>
+        <button class="lp-btn-primary" id="nav-signup-btn">Get Started</button>
+    </div>
+</nav>
+
+<!-- ====================================================
+     HERO  — split layout
+===================================================== -->
+<section class="lp-hero">
+    <!-- Left: headline + CTA -->
+    <div class="lp-hero-left">
+        <div class="lp-hero-eyebrow">Student Academic Planner</div>
+        <h1>One dashboard.<br>Every tool you<br>need to <em>succeed.</em></h1>
+        <p class="lp-hero-desc">
+            Manage subjects, track task progress, calculate your GPA, plan your week, and keep notes — all in one clean tool that saves everything automatically to your browser.
+        </p>
+        <div class="lp-hero-cta">
+            <button class="lp-cta-primary" id="hero-signup-btn">Start for Free</button>
+            <button class="lp-cta-ghost" id="hero-login-btn">Log In</button>
+        </div>
+        <div class="lp-social-proof">
+            <div class="lp-avatar-stack">
+                <span class="av1">CB</span>
+                <span class="av2">RK</span>
+                <span class="av3">SA</span>
+                <span class="av4">PM</span>
+            </div>
+            <span>Used by students managing their academic life every day</span>
+        </div>
+    </div>
+
+    <!-- Right: mock dashboard preview -->
+    <div class="lp-hero-right">
+        <!-- browser chrome strip -->
+        <div class="mock-header">
+            <div class="mock-header-dot">
+                <i class="d1"></i><i class="d2"></i><i class="d3"></i>
+            </div>
+            <span>achievers / dashboard</span>
+            <span style="color:rgba(255,255,255,0.12)">&#9679; live</span>
+        </div>
+
+        <!-- stat cards -->
+        <div class="mock-stat-row">
+            <div class="mock-stat c-blue">
+                <div class="mock-stat-val">12</div>
+                <div class="mock-stat-label">Total Tasks</div>
+            </div>
+            <div class="mock-stat c-green">
+                <div class="mock-stat-val">8</div>
+                <div class="mock-stat-label">Completed</div>
+            </div>
+            <div class="mock-stat c-purp">
+                <div class="mock-stat-val">8.6</div>
+                <div class="mock-stat-label">GPA</div>
+            </div>
+        </div>
+
+        <!-- task list -->
+        <div class="mock-tasks">
+            <div class="mock-tasks-header">
+                <span>Active Tasks — Artificial Intelligence</span>
+                <span style="color:var(--blue)">+Add</span>
+            </div>
+            <div class="mock-task-item">
+                <div class="mock-cb done"></div>
+                <span style="text-decoration:line-through;opacity:0.4">Basics of Soft Computing</span>
+                <span class="mock-tag tag-h">High</span>
+            </div>
+            <div class="mock-task-item">
+                <div class="mock-cb"></div>
+                <span>Techniques of Soft Computing</span>
+                <span class="mock-tag tag-h">High</span>
+            </div>
+            <div class="mock-task-item">
+                <div class="mock-cb"></div>
+                <span>Neural Network Architectures</span>
+                <span class="mock-tag tag-m">Medium</span>
+            </div>
+        </div>
+
+        <!-- progress -->
+        <div class="mock-progress-bar">
+            <div class="mock-pb-label">
+                <span>Progress — AI Subject</span>
+                <span style="color:var(--blue)">67%</span>
+            </div>
+            <div class="mock-pb-track">
+                <div class="mock-pb-fill"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================
+     TICKER STRIP
+===================================================== -->
+<div class="lp-ticker">
+    <div class="lp-ticker-track">
+        <span class="lp-ticker-item">Tasks per subject <strong>with deadlines</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">GPA calculator <strong>on a 10-point scale</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">Weekly timetable <strong>auto-saved</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">Quick notes <strong>always available</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">Dark &amp; light theme <strong>toggle anytime</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">Data stored <strong>only in your browser</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <!-- duplicate for seamless loop -->
+        <span class="lp-ticker-item">Tasks per subject <strong>with deadlines</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">GPA calculator <strong>on a 10-point scale</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">Weekly timetable <strong>auto-saved</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">Quick notes <strong>always available</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">Dark &amp; light theme <strong>toggle anytime</strong></span>
+        <span class="lp-ticker-sep">|</span>
+        <span class="lp-ticker-item">Data stored <strong>only in your browser</strong></span>
+        <span class="lp-ticker-sep">|</span>
+    </div>
+</div>
+
+<!-- ====================================================
+     STATS BAR
+===================================================== -->
+<div class="lp-stats-bar">
+    <div class="lp-stat-item">
+        <div class="lp-stat-num">4<span>+</span></div>
+        <div class="lp-stat-desc">Dedicated tools<br>built for students</div>
+    </div>
+    <div class="lp-stat-item">
+        <div class="lp-stat-num">0<span>ms</span></div>
+        <div class="lp-stat-desc">Server round-trips.<br>Everything runs offline</div>
+    </div>
+    <div class="lp-stat-item">
+        <div class="lp-stat-num">100<span>%</span></div>
+        <div class="lp-stat-desc">Free, forever.<br>No subscriptions</div>
+    </div>
+    <div class="lp-stat-item">
+        <div class="lp-stat-num">10<span>.0</span></div>
+        <div class="lp-stat-desc">GPA scale supported<br>with grade breakdown</div>
+    </div>
+</div>
+
+<!-- ====================================================
+     HOW IT WORKS
+===================================================== -->
+<section class="lp-how" id="how">
+    <div class="lp-section-label">How it works</div>
+    <div class="lp-how-grid">
+        <div class="lp-how-title">
+            Three steps<br>to a <em>better</em><br>semester
+        </div>
+        <div class="lp-how-steps">
+            <div class="lp-step">
+                <div class="lp-step-num">01</div>
+                <div class="lp-step-body">
+                    <h3>Create your account</h3>
+                    <p>Sign up with your name, email and a password. Your credentials are stored only in your browser — no server, no cloud. Everything stays private on your device.</p>
+                    <span class="lp-step-tag">30 seconds</span>
+                </div>
+            </div>
+            <div class="lp-step">
+                <div class="lp-step-num">02</div>
+                <div class="lp-step-body">
+                    <h3>Add your subjects and tasks</h3>
+                    <p>Create subjects for your semester — AI, Maths, Python, whatever you study. Add tasks under each one with a deadline and priority. Your progress bar updates in real time.</p>
+                    <span class="lp-step-tag">5 minutes setup</span>
+                </div>
+            </div>
+            <div class="lp-step">
+                <div class="lp-step-num">03</div>
+                <div class="lp-step-body">
+                    <h3>Use every tool, every day</h3>
+                    <p>Check off tasks, calculate GPA after exams, fill your weekly timetable, jot quick notes before class. Everything you add is automatically saved — even after closing the tab.</p>
+                    <span class="lp-step-tag">Always available</span>
+                </div>
+            </div>
+            <div class="lp-step">
+                <div class="lp-step-num">04</div>
+                <div class="lp-step-body">
+                    <h3>Track, improve, repeat</h3>
+                    <p>Watch your dashboard stats update as you complete tasks. Enter marks after each exam to see your live GPA. Delete subjects when a semester ends, start fresh for the next one.</p>
+                    <span class="lp-step-tag">Semester-friendly</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================
+     FEATURE DEEP-DIVE
+===================================================== -->
+<section class="lp-deep" id="features">
+    <div class="lp-deep-header">
+        <div class="lp-section-label">Features</div>
+        <div class="lp-deep-title">
+            Not just a to-do list.<br>A complete academic toolkit.
+        </div>
+    </div>
+
+    <!-- Row 1 — Tasks -->
+    <div class="lp-deep-row">
+        <div class="lp-deep-text">
+            <div class="lp-deep-num">01</div>
+            <h3>Task Management by Subject</h3>
+            <p>
+                Organise your work the way your brain actually thinks — subject by subject. Add tasks with deadlines, set priority levels, and mark them complete. A progress bar shows exactly where you stand for each subject at a glance.
+            </p>
+            <p style="font-size:0.85rem;color:var(--txt2);">
+                Added a new subject in the middle of the semester? No problem. Delete any subject — and all its tasks — in one tap.
+            </p>
+            <div class="lp-deep-chips">
+                <span class="lp-chip">Per-subject filtering</span>
+                <span class="lp-chip">Priority levels</span>
+                <span class="lp-chip">Deadline tracking</span>
+                <span class="lp-chip">Edit and delete</span>
+                <span class="lp-chip">Auto-saved</span>
+            </div>
+        </div>
+        <div class="lp-deep-visual">
+            <div class="mock-tasks" style="width:100%;max-width:340px;">
+                <div class="mock-tasks-header">
+                    <span>Python Programming</span>
+                    <span style="color:var(--green)">2 / 3 done</span>
+                </div>
+                <div class="mock-task-item">
+                    <div class="mock-cb done"></div>
+                    <span style="text-decoration:line-through;opacity:0.4">Basics of Python</span>
+                    <span class="mock-tag tag-h">High</span>
+                </div>
+                <div class="mock-task-item">
+                    <div class="mock-cb done"></div>
+                    <span style="text-decoration:line-through;opacity:0.4">Functions &amp; Scope</span>
+                    <span class="mock-tag tag-m">Medium</span>
+                </div>
+                <div class="mock-task-item">
+                    <div class="mock-cb"></div>
+                    <span>OOPS Concepts</span>
+                    <span class="mock-tag tag-h">High</span>
+                </div>
+                <div style="padding:8px 14px;border-top:1px solid var(--line);">
+                    <div class="mock-pb-track">
+                        <div class="mock-pb-fill" style="width:67%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2 — GPA Calculator (reversed) -->
+    <div class="lp-deep-row reverse">
+        <div class="lp-deep-text">
+            <div class="lp-deep-num">02</div>
+            <h3>GPA Calculator with Grade Breakdown</h3>
+            <p>
+                Enter your marks out of 100 for each subject and get your GPA on a 10-point scale instantly. The breakdown shows the grade letter and points for every subject so you know exactly where you lost marks.
+            </p>
+            <p style="font-size:0.85rem;color:var(--txt2);">
+                Subjects sync automatically — add a subject in Tasks and it immediately appears in the calculator. No double entry.
+            </p>
+            <div class="lp-deep-chips">
+                <span class="lp-chip">10-point GPA scale</span>
+                <span class="lp-chip">O / A+ / A / B+ grading</span>
+                <span class="lp-chip">Synced with subjects</span>
+                <span class="lp-chip">Saved to dashboard</span>
+            </div>
+        </div>
+        <div class="lp-deep-visual">
+            <div class="mini-calc">
+                <div class="mini-calc-head">
+                    <span>Subjects &amp; Marks</span>
+                    <span style="color:var(--blue)">GPA: 8.25</span>
+                </div>
+                <div class="mini-calc-row">
+                    <div class="mini-calc-name">
+                        <span class="mini-dot" style="background:#9b59b6"></span>
+                        <span style="font-size:0.76rem">Artificial Intelligence</span>
+                    </div>
+                    <span class="mini-marks">85</span>
+                    <span class="mini-grade grade-a-plus" style="background:rgba(46,204,113,0.15);color:#2ecc71">A+</span>
+                </div>
+                <div class="mini-calc-row">
+                    <div class="mini-calc-name">
+                        <span class="mini-dot" style="background:#3498db"></span>
+                        <span style="font-size:0.76rem">Python Programming</span>
+                    </div>
+                    <span class="mini-marks">78</span>
+                    <span class="mini-grade" style="background:rgba(41,128,185,0.15);color:#3498db">A</span>
+                </div>
+                <div class="mini-calc-row">
+                    <div class="mini-calc-name">
+                        <span class="mini-dot" style="background:#e67e22"></span>
+                        <span style="font-size:0.76rem">Disaster Management</span>
+                    </div>
+                    <span class="mini-marks">72</span>
+                    <span class="mini-grade" style="background:rgba(41,128,185,0.15);color:#3498db">A</span>
+                </div>
+                <div class="mini-calc-row">
+                    <div class="mini-calc-name">
+                        <span class="mini-dot" style="background:#2ecc71"></span>
+                        <span style="font-size:0.76rem">Discrete Mathematics</span>
+                    </div>
+                    <span class="mini-marks">63</span>
+                    <span class="mini-grade" style="background:rgba(230,126,34,0.15);color:#e67e22">B+</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 3 — Timetable -->
+    <div class="lp-deep-row">
+        <div class="lp-deep-text">
+            <div class="lp-deep-num">03</div>
+            <h3>Weekly Timetable — Click to Fill</h3>
+            <p>
+                A Mon–Fri grid with 7 class periods plus Break and Lunch rows. Click any empty cell, pick a subject from your list, add an optional room number, and it's saved. Hover over a cell to clear it.
+            </p>
+            <p style="font-size:0.85rem;color:var(--txt2);">
+                The subject dropdown is populated from your saved subjects — so everything stays in sync across all four tools.
+            </p>
+            <div class="lp-deep-chips">
+                <span class="lp-chip">5-day grid</span>
+                <span class="lp-chip">7 periods + Break/Lunch</span>
+                <span class="lp-chip">Room number support</span>
+                <span class="lp-chip">Synced subject list</span>
+                <span class="lp-chip">One-click clear</span>
+            </div>
+        </div>
+        <div class="lp-deep-visual">
+            <div class="mini-tt">
+                <div class="mini-tt-head">
+                    <div>Period</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                </div>
+                <div class="mini-tt-row">
+                    <div class="mini-tt-period">1st</div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-a">AI</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-b">Py</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-a">AI</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-c">DM</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-d">Maths</span></div>
+                </div>
+                <div class="mini-tt-row">
+                    <div class="mini-tt-period">2nd</div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-d">Maths</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-a">AI</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-b">Py</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-b">Py</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-c">DM</span></div>
+                </div>
+                <div class="mini-tt-row" style="background:rgba(255,255,255,0.02);">
+                    <div class="mini-tt-period" style="font-style:italic">Break</div>
+                    <div class="mini-tt-slot" colspan="5" style="color:rgba(255,255,255,0.1);font-style:italic;grid-column:2/7">— — — — —</div>
+                </div>
+                <div class="mini-tt-row">
+                    <div class="mini-tt-period">3rd</div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-c">DM</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-d">Maths</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-c">DM</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-a">AI</span></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-b">Py</span></div>
+                </div>
+                <div class="mini-tt-row">
+                    <div class="mini-tt-period">4th</div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-b">Py</span></div>
+                    <div class="mini-tt-slot"></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-d">Maths</span></div>
+                    <div class="mini-tt-slot"></div>
+                    <div class="mini-tt-slot"><span class="slot-filled sf-a">AI</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 4 — Notes (reversed) -->
+    <div class="lp-deep-row reverse">
+        <div class="lp-deep-text">
+            <div class="lp-deep-num">04</div>
+            <h3>Quick Notes — Always Within Reach</h3>
+            <p>
+                Need to write down a formula before class, a reminder about an assignment, or a summary of a lecture? Notes are shown as colour-coded cards, newest first. Click any card to preview the full content.
+            </p>
+            <p style="font-size:0.85rem;color:var(--txt2);">
+                Type a title, write the body, hit Ctrl+Enter to save. Hover a card to delete. That's the whole workflow.
+            </p>
+            <div class="lp-deep-chips">
+                <span class="lp-chip">Card grid view</span>
+                <span class="lp-chip">Full preview modal</span>
+                <span class="lp-chip">Newest-first sorting</span>
+                <span class="lp-chip">Ctrl+Enter to save</span>
+                <span class="lp-chip">Auto-saved</span>
+            </div>
+        </div>
+        <div class="lp-deep-visual">
+            <div class="mini-notes">
+                <div class="mini-note-card mn-1">
+                    <div class="mini-note-title">Neural Networks — Key Terms</div>
+                    <div class="mini-note-body">Perceptron, activation functions (ReLU, sigmoid), backpropagation, gradient descent...</div>
+                    <div class="mini-note-date">May 21 · 09:14</div>
+                </div>
+                <div class="mini-note-card mn-2">
+                    <div class="mini-note-title">Exam Schedule</div>
+                    <div class="mini-note-body">AI — 28 May, Python — 2 Jun, Maths — 5 Jun. Check hall ticket!</div>
+                    <div class="mini-note-date">May 20 · 18:30</div>
+                </div>
+                <div class="mini-note-card mn-3">
+                    <div class="mini-note-title">Python Tips</div>
+                    <div class="mini-note-body">List comprehension, lambda, map/filter, *args and **kwargs syntax...</div>
+                    <div class="mini-note-date">May 19 · 11:02</div>
+                </div>
+                <div class="mini-note-card mn-4">
+                    <div class="mini-note-title">GPA Target</div>
+                    <div class="mini-note-body">Need 80+ in Maths to pull GPA above 8.5 overall. Revise Sets chapter.</div>
+                    <div class="mini-note-date">May 18 · 20:45</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================
+     TESTIMONIALS
+===================================================== -->
+<section class="lp-quotes">
+    <div class="lp-quotes-header">
+        <div class="lp-section-label">Student voices</div>
+        <div class="lp-quotes-title">
+            Built around how students actually study
+        </div>
+    </div>
+    <div class="lp-quotes-grid">
+        <div class="lp-quote-card">
+            <div class="lp-quote-stars">
+                <div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div>
+            </div>
+            <div class="lp-quote-mark">"</div>
+            <p class="lp-quote-text">Finally something that groups tasks by subject. I was juggling four courses and a single flat task list was useless. Achievers keeps everything sorted the way I think about my work.</p>
+            <div class="lp-quote-author">
+                <div class="lp-quote-avatar" style="background:var(--blue)">CB</div>
+                <div class="lp-quote-info">
+                    <strong>Chetanya Bhatia</strong>
+                    <span>B.Tech CSE · Semester 4</span>
+                </div>
+            </div>
+        </div>
+        <div class="lp-quote-card">
+            <div class="lp-quote-stars">
+                <div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div>
+            </div>
+            <div class="lp-quote-mark">"</div>
+            <p class="lp-quote-text">The GPA calculator is spot-on for our university's grading system. I enter my internals and it tells me exactly what grade I'm getting. No more manual calculation mistakes before results day.</p>
+            <div class="lp-quote-author">
+                <div class="lp-quote-avatar" style="background:var(--purple)">RK</div>
+                <div class="lp-quote-info">
+                    <strong>Rohit Khanna</strong>
+                    <span>B.Sc IT · Semester 2</span>
+                </div>
+            </div>
+        </div>
+        <div class="lp-quote-card">
+            <div class="lp-quote-stars">
+                <div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div><div class="lp-star"></div>
+            </div>
+            <div class="lp-quote-mark">"</div>
+            <p class="lp-quote-text">I love that the timetable uses the same subject list as everything else. I added "Discrete Maths" once and it showed up in the calculator, the timetable, the task filter — everything synced instantly.</p>
+            <div class="lp-quote-author">
+                <div class="lp-quote-avatar" style="background:var(--green)">SA</div>
+                <div class="lp-quote-info">
+                    <strong>Simran Arora</strong>
+                    <span>BCA · Semester 3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================
+     WHY ACHIEVERS — comparison table
+===================================================== -->
+<section class="lp-why" id="why">
+    <div class="lp-section-label">Why Achievers</div>
+    <div class="lp-why-title">
+        Better than a notes app.<br>Simpler than a project tool.
+    </div>
+    <table class="lp-compare-table">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Achievers</th>
+                <th>Generic Notes App</th>
+                <th>Spreadsheet</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tasks organised by subject</td>
+                <td><span class="check">Yes</span></td>
+                <td><span class="cross">No</span></td>
+                <td><span class="cross">Manual only</span></td>
+            </tr>
+            <tr>
+                <td>GPA calculator built-in</td>
+                <td><span class="check">Yes</span></td>
+                <td><span class="cross">No</span></td>
+                <td><span class="cross">Formula DIY</span></td>
+            </tr>
+            <tr>
+                <td>Weekly timetable grid</td>
+                <td><span class="check">Yes</span></td>
+                <td><span class="cross">No</span></td>
+                <td><span class="cross">Layout DIY</span></td>
+            </tr>
+            <tr>
+                <td>Subjects synced across all tools</td>
+                <td><span class="check">Automatic</span></td>
+                <td><span class="cross">No</span></td>
+                <td><span class="cross">Copy-paste</span></td>
+            </tr>
+            <tr>
+                <td>Works offline, no server</td>
+                <td><span class="check">Yes</span></td>
+                <td><span class="cross">Requires internet</span></td>
+                <td><span class="check">Yes</span></td>
+            </tr>
+            <tr>
+                <td>Dark mode support</td>
+                <td><span class="check">Yes</span></td>
+                <td><span class="cross">Varies</span></td>
+                <td><span class="cross">No</span></td>
+            </tr>
+            <tr>
+                <td>Cost</td>
+                <td><span class="check">Free forever</span></td>
+                <td><span class="cross">Often freemium</span></td>
+                <td><span class="check">Free</span></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ====================================================
+     FINAL CTA
+===================================================== -->
+<section class="lp-cta-strip">
+    <div class="lp-cta-left">
+        <h2>Ready to take<br>control of your<br><em>academics?</em></h2>
+        <p>Create your free account in under 30 seconds. No credit card. No email confirmation. No setup guide. Just open it and start — your data saves itself.</p>
+        <div class="lp-cta-btn-row">
+            <button class="lp-cta-primary" id="cta-signup-btn">Create Free Account</button>
+            <button class="lp-cta-ghost" id="cta-login-btn">I already have an account</button>
+        </div>
+    </div>
+    <div class="lp-cta-right">
+        <div class="lp-check-item">
+            <div class="lp-check-icon">&#10003;</div>
+            <div class="lp-check-text">
+                <strong>Subjects &amp; tasks in one view</strong>
+                <span>Add subjects, assign tasks, track progress with a real-time progress bar per subject.</span>
+            </div>
+        </div>
+        <div class="lp-check-item">
+            <div class="lp-check-icon">&#10003;</div>
+            <div class="lp-check-text">
+                <strong>GPA calculated instantly</strong>
+                <span>Enter marks and see your GPA on a 10-point scale with a full grade breakdown.</span>
+            </div>
+        </div>
+        <div class="lp-check-item">
+            <div class="lp-check-icon">&#10003;</div>
+            <div class="lp-check-text">
+                <strong>Timetable that stays filled</strong>
+                <span>Click any slot, pick your subject, done. The grid saves and persists across sessions.</span>
+            </div>
+        </div>
+        <div class="lp-check-item">
+            <div class="lp-check-icon">&#10003;</div>
+            <div class="lp-check-text">
+                <strong>Notes that actually preview</strong>
+                <span>Cards show a preview. Click to see the full note. Ctrl+Enter to save — fast and frictionless.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================
+     FOOTER
+===================================================== -->
+<footer class="lp-footer">
+    <div class="lp-footer-top">
+        <div class="lp-footer-brand">
+            <span class="lp-logo">Achievers</span>
+            <p>A student academic planner built to keep your tasks, GPA, schedule, and notes in one place — with zero servers and zero cost.</p>
+        </div>
+        <div class="lp-footer-col">
+            <h4>App</h4>
+            <a href="#" id="footer-login-link">Log In</a>
+            <a href="#" id="footer-signup-link">Sign Up Free</a>
+            <a href="index.html">Dashboard</a>
+            <a href="tasks.html">My Tasks</a>
+        </div>
+        <div class="lp-footer-col">
+            <h4>Tools</h4>
+            <a href="calculator.html">GPA Calculator</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notes.html">Notes</a>
+            <a href="profile.html">Profile</a>
+        </div>
+        <div class="lp-footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+    </div>
+    <div class="lp-footer-bottom">
+        <p>&copy; 2026 Achievers Academic. All rights reserved.</p>
+        <div class="lp-footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ====================================================
+     LOGIN MODAL
+===================================================== -->
+<div class="auth-overlay hidden" id="login-overlay">
+    <div class="auth-card">
+        <button class="auth-card-close" id="login-close">&times;</button>
+        <h2>Welcome back</h2>
+        <p class="auth-sub">Log in to your Achievers account</p>
+        <div class="auth-error" id="login-error"></div>
+        <div class="auth-field">
+            <label>Email</label>
+            <input type="email" id="login-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="auth-field">
+            <label>Password</label>
+            <div class="auth-input-wrap">
+                <input type="password" id="login-password" placeholder="Your password" autocomplete="current-password">
+                <button type="button" class="pw-toggle" data-target="login-password" title="Show/hide password">&#128065;</button>
+            </div>
+        </div>
+        <button class="auth-submit-btn" id="login-submit-btn">Log In</button>
+        <p class="auth-switch">No account yet? <button id="switch-to-signup">Sign up free</button></p>
+    </div>
+</div>
+
+<!-- ====================================================
+     SIGNUP MODAL
+===================================================== -->
+<div class="auth-overlay hidden" id="signup-overlay">
+    <div class="auth-card">
+        <button class="auth-card-close" id="signup-close">&times;</button>
+        <h2>Create account</h2>
+        <p class="auth-sub">Join Achievers — completely free</p>
+        <div class="auth-error" id="signup-error"></div>
+        <div class="auth-field">
+            <label>Full Name</label>
+            <input type="text" id="signup-name" placeholder="Your full name" autocomplete="name">
+        </div>
+        <div class="auth-field">
+            <label>Email</label>
+            <input type="email" id="signup-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="auth-field">
+            <label>Password</label>
+            <div class="auth-input-wrap">
+                <input type="password" id="signup-password" placeholder="Min 6 characters" autocomplete="new-password">
+                <button type="button" class="pw-toggle" data-target="signup-password" title="Show/hide password">&#128065;</button>
+            </div>
+        </div>
+        <div class="auth-field">
+            <label>Confirm Password</label>
+            <div class="auth-input-wrap">
+                <input type="password" id="signup-confirm-password" placeholder="Re-enter your password" autocomplete="new-password">
+                <button type="button" class="pw-toggle" data-target="signup-confirm-password" title="Show/hide password">&#128065;</button>
+            </div>
+        </div>
+        <div class="auth-field">
+            <label>Contact Number</label>
+            <input type="tel" id="signup-contact" placeholder="e.g. +91 98765 43210" autocomplete="tel">
+        </div>
+        <button class="auth-submit-btn" id="signup-submit-btn">Create Account</button>
+        <p class="auth-switch">Already have an account? <button id="switch-to-login">Log in</button></p>
+    </div>
+</div>
+
+<!-- ====================================================
+     SCRIPT (auth logic — unchanged)
+===================================================== -->
+<script>
+    // Redirect if already logged in
+    (function () {
+        if (localStorage.getItem('achievers_current_user')) window.location.href = 'index.html';
+    })();
+
+    // ---- User store helpers ----
+    function getUsers() { var r = localStorage.getItem('achievers_users'); return r ? JSON.parse(r) : []; }
+    function saveUsers(u) { localStorage.setItem('achievers_users', JSON.stringify(u)); }
+    function findUser(e) { return getUsers().find(function(u){ return u.email.toLowerCase() === e.toLowerCase(); }); }
+    function setCurrentUser(u) {
+        localStorage.setItem('achievers_current_user', JSON.stringify({name:u.name,email:u.email}));
+        localStorage.setItem('userName', u.name);
+        localStorage.setItem('userEmail', u.email);
+        if(u.contact) localStorage.setItem('userContact', u.contact);
+    }
+    function showError(id, msg) { var el=document.getElementById(id); el.textContent=msg; el.classList.add('show'); }
+    function hideError(id) { document.getElementById(id).classList.remove('show'); }
+
+    // ---- Modal helpers ----
+    function openOverlay(id) { document.getElementById(id).classList.remove('hidden'); document.body.style.overflow='hidden'; }
+    function closeOverlay(id) { document.getElementById(id).classList.add('hidden'); document.body.style.overflow=''; }
+
+    ['login-overlay','signup-overlay'].forEach(function(id){
+        document.getElementById(id).addEventListener('click', function(e){ if(e.target===this) closeOverlay(id); });
+    });
+    document.getElementById('login-close').addEventListener('click', function(){ closeOverlay('login-overlay'); });
+    document.getElementById('signup-close').addEventListener('click', function(){ closeOverlay('signup-overlay'); });
+
+    function openLogin() {
+        closeOverlay('signup-overlay'); hideError('login-error');
+        document.getElementById('login-email').value='';
+        document.getElementById('login-password').value='';
+        openOverlay('login-overlay');
+        setTimeout(function(){ document.getElementById('login-email').focus(); }, 80);
+    }
+    function openSignup() {
+        closeOverlay('login-overlay'); hideError('signup-error');
+        document.getElementById('signup-name').value='';
+        document.getElementById('signup-email').value='';
+        document.getElementById('signup-password').value='';
+        document.getElementById('signup-confirm-password').value='';
+        document.getElementById('signup-contact').value='';
+        openOverlay('signup-overlay');
+        setTimeout(function(){ document.getElementById('signup-name').focus(); }, 80);
+    }
+
+    // Wire all buttons
+    ['nav-login-btn','cta-login-btn'].forEach(function(id){ document.getElementById(id).addEventListener('click', openLogin); });
+    ['nav-signup-btn','hero-signup-btn','cta-signup-btn'].forEach(function(id){ document.getElementById(id).addEventListener('click', openSignup); });
+    document.getElementById('hero-login-btn').addEventListener('click', openLogin);
+    document.getElementById('footer-login-link').addEventListener('click', function(e){ e.preventDefault(); openLogin(); });
+    document.getElementById('footer-signup-link').addEventListener('click', function(e){ e.preventDefault(); openSignup(); });
+    document.getElementById('switch-to-signup').addEventListener('click', openSignup);
+    document.getElementById('switch-to-login').addEventListener('click', openLogin);
+
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeOverlay('login-overlay'); closeOverlay('signup-overlay'); } });
+
+    // ---- Login ----
+    function doLogin() {
+        var email = document.getElementById('login-email').value.trim();
+        var password = document.getElementById('login-password').value;
+        hideError('login-error');
+        if(!email||!password){ showError('login-error','Please fill in both email and password.'); return; }
+        var user = findUser(email);
+        if(!user){ showError('login-error','No account found with that email. Please sign up first.'); return; }
+        if(user.password!==password){ showError('login-error','Incorrect password. Please try again.'); return; }
+        setCurrentUser(user);
+        window.location.href='index.html';
+    }
+    document.getElementById('login-submit-btn').addEventListener('click', doLogin);
+    document.getElementById('login-password').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
+    document.getElementById('login-email').addEventListener('keydown', function(e){ if(e.key==='Enter') document.getElementById('login-password').focus(); });
+
+    // ---- Signup ----
+    function doSignup() {
+        var name = document.getElementById('signup-name').value.trim();
+        var email = document.getElementById('signup-email').value.trim();
+        var password = document.getElementById('signup-password').value;
+        var confirmPassword = document.getElementById('signup-confirm-password').value;
+        var contact = document.getElementById('signup-contact').value.trim();
+        hideError('signup-error');
+        if(!name){ showError('signup-error','Please enter your full name.'); return; }
+        if(!email||!/\S+@\S+\.\S+/.test(email)){ showError('signup-error','Please enter a valid email address.'); return; }
+        if(!password||password.length<6){ showError('signup-error','Password must be at least 6 characters.'); return; }
+        if(password!==confirmPassword){ showError('signup-error','Passwords do not match. Please try again.'); return; }
+        var digitsOnly = contact.replace(/[\s\-]/g, '').replace(/^\+?91/, '');
+        if(!contact || !/^[6-9]\d{9}$/.test(digitsOnly)){ showError('signup-error','Please enter a valid Indian mobile number (10 digits, starting with 6–9).'); return; }
+        if(findUser(email)){ showError('signup-error','An account with this email already exists. Please log in.'); return; }
+        var users=getUsers();
+        var newUser={name:name,email:email,password:password,contact:contact};
+        users.push(newUser); saveUsers(users); setCurrentUser(newUser);
+        window.location.href='index.html';
+    }
+    document.getElementById('signup-submit-btn').addEventListener('click', doSignup);
+    document.getElementById('signup-password').addEventListener('keydown', function(e){ if(e.key==='Enter') doSignup(); });
+    // ---- Show/Hide Password toggles ----
+    document.querySelectorAll('.pw-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var input = document.getElementById(this.dataset.target);
+            if (input.type === 'password') {
+                input.type = 'text';
+                this.style.color = 'var(--blue)';
+            } else {
+                input.type = 'password';
+                this.style.color = '';
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Achievers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2 class="logo">Achievers</h2>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <span class="theme-icon" id="theme-icon">&#9790;</span>
+                </button>
+            </div>
+
+            <a href="profile.html" class="user-profile-section" id="user-profile-section" style="border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.06);">
+                <div class="user-avatar" id="user-avatar">CB</div>
+                <div class="user-details">
+                    <strong id="sidebar-username">Student</strong>
+                    <span class="user-details-email">My Profile</span>
+                </div>
+                <span class="profile-chevron" style="color:var(--blue);">&#10003;</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <span class="sidebar-nav-label">Menu</span>
+                <a href="index.html" class="nav-link" data-page="index">
+                    <span class="nav-link-icon">&#8962;</span>Dashboard
+                </a>
+                <a href="tasks.html" class="nav-link" data-page="tasks">
+                    <span class="nav-link-icon">&#10003;</span>My Tasks
+                </a>
+                <a href="timetable.html" class="nav-link" data-page="timetable">
+                    <span class="nav-link-icon">&#9783;</span>Timetable
+                </a>
+                <a href="notes.html" class="nav-link" data-page="notes">
+                    <span class="nav-link-icon">&#9998;</span>Notes
+                </a>
+                <a href="calculator.html" class="nav-link" data-page="calculator">
+                    <span class="nav-link-icon">&#8721;</span>Calculator
+                </a>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="login.html" class="sidebar-logout-btn" id="logout-link">
+                <span class="nav-link-icon">&#10148;</span>Logout
+            </a>
+
+            <div class="widget grades-widget">
+                <h3>Current GPA</h3>
+                <div class="gpa-display">
+                    <span class="gpa-score" id="gpa-score">--</span>
+                    <span class="gpa-label">/ 10.0</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <!-- Hero Banner -->
+            <div class="profile-hero">
+                <div class="profile-hero-avatar" id="profile-hero-avatar">CB</div>
+                <div class="profile-hero-info">
+                    <h1 id="profile-hero-name">Student</h1>
+                    <p class="profile-hero-email" id="profile-hero-email">No email set</p>
+                    <div class="profile-hero-badges">
+                        <span class="profile-badge">&#127891; Active Student</span>
+                        <span class="profile-badge profile-badge-green">GPA: <span id="profile-badge-gpa">--</span> / 10.0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="profile-stats-row">
+                <div class="profile-stat-card">
+                    <span class="profile-stat-value" id="ps-gpa">--</span>
+                    <span class="profile-stat-label">GPA Score</span>
+                </div>
+                <div class="profile-stat-card">
+                    <span class="profile-stat-value" id="ps-tasks">0</span>
+                    <span class="profile-stat-label">Total Tasks</span>
+                </div>
+                <div class="profile-stat-card">
+                    <span class="profile-stat-value" id="ps-done">0</span>
+                    <span class="profile-stat-label">Completed</span>
+                </div>
+                <div class="profile-stat-card">
+                    <span class="profile-stat-value" id="ps-subjects">0</span>
+                    <span class="profile-stat-label">Subjects</span>
+                </div>
+            </div>
+
+            <!-- Two-column content -->
+            <div class="profile-content-grid">
+
+                <!-- Left: Edit Profile Form -->
+                <div class="profile-section-card">
+                    <div class="profile-section-header">
+                        <h2>Edit Profile</h2>
+                        <span>Update your account details</span>
+                    </div>
+                    <div class="profile-form-body">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="profile-name" placeholder="Your full name" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="profile-email" placeholder="your@email.com" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input type="tel" id="profile-contact" placeholder="10-digit Indian mobile number" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <div style="position:relative;display:flex;align-items:center;">
+                                <input type="password" id="profile-password" placeholder="Leave blank to keep current" style="flex:1;padding-right:40px;">
+                                <button type="button" onclick="(function(b){var i=document.getElementById('profile-password');if(i.type==='password'){i.type='text';b.style.color='var(--blue)';}else{i.type='password';b.style.color='';};})(this)" style="position:absolute;right:10px;background:none;border:none;cursor:pointer;font-size:1rem;color:var(--txt2);padding:0;line-height:1;" title="Show/hide password">&#128065;</button>
+                            </div>
+                        </div>
+                        <button class="save-profile-btn" id="save-profile-btn">Save Changes</button>
+                        <p class="save-msg hidden" id="save-msg">&#10003; Profile updated successfully!</p>
+                    </div>
+
+                    <div class="profile-danger-zone">
+                        <h3>Session</h3>
+                        <a href="login.html" class="logout-full-btn" id="logout-full-btn">
+                            &#10148; Sign Out of Achievers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Account Info -->
+                <div class="profile-section-card">
+                    <div class="profile-section-header">
+                        <h2>Account Overview</h2>
+                        <span>Your current academic snapshot</span>
+                    </div>
+                    <div class="profile-info-list">
+                        <div class="profile-info-item">
+                            <span class="profile-info-icon">&#128100;</span>
+                            <div class="profile-info-text">
+                                <span class="profile-info-label">Full Name</span>
+                                <span class="profile-info-value" id="pi-name">Student</span>
+                            </div>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-icon">&#9993;</span>
+                            <div class="profile-info-text">
+                                <span class="profile-info-label">Email</span>
+                                <span class="profile-info-value mono" id="pi-email">Not set</span>
+                            </div>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-icon">&#128222;</span>
+                            <div class="profile-info-text">
+                                <span class="profile-info-label">Contact Number</span>
+                                <span class="profile-info-value mono" id="pi-contact">Not set</span>
+                            </div>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-icon">&#127891;</span>
+                            <div class="profile-info-text">
+                                <span class="profile-info-label">Current GPA</span>
+                                <span class="profile-info-value mono" id="pi-gpa">-- / 10.0</span>
+                            </div>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-icon">&#9989;</span>
+                            <div class="profile-info-text">
+                                <span class="profile-info-label">Tasks Completed</span>
+                                <span class="profile-info-value mono" id="pi-tasks">0 of 0</span>
+                            </div>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-icon">&#128218;</span>
+                            <div class="profile-info-text">
+                                <span class="profile-info-label">Subjects Enrolled</span>
+                                <span class="profile-info-value mono" id="pi-subjects">0 subjects</span>
+                            </div>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-icon">&#127758;</span>
+                            <div class="profile-info-text">
+                                <span class="profile-info-label">Platform</span>
+                                <span class="profile-info-value">Achievers Academic &copy; 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 <strong>Achievers</strong> Academic. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        (function loadProfileData() {
+            var name  = localStorage.getItem('userName')  || 'Student';
+            var email = localStorage.getItem('userEmail') || '';
+            var gpa   = localStorage.getItem('currentGPA') || '--';
+            var total = parseInt(localStorage.getItem('totalTasks') || '0', 10);
+            var done  = parseInt(localStorage.getItem('completedTasks') || '0', 10);
+            var subjectsRaw = localStorage.getItem('subjects');
+            var subCount = 0;
+            try { subCount = subjectsRaw ? JSON.parse(subjectsRaw).length : 0; } catch(e) {}
+
+            var contact = localStorage.getItem('userContact') || '';
+
+            // Hero
+            document.getElementById('profile-hero-name').textContent  = name;
+            document.getElementById('profile-hero-email').textContent = email || 'No email set';
+            document.getElementById('profile-badge-gpa').textContent  = gpa;
+
+            // Avatar initials
+            function initials(n) {
+                var p = n.trim().split(' ');
+                return p.map(function(w){ return w[0]; }).join('').toUpperCase().slice(0,2);
+            }
+            var av = initials(name);
+            document.getElementById('profile-hero-avatar').textContent = av;
+            // Also update sidebar avatar via script.js (loadUser runs before this)
+
+            // Stats row
+            document.getElementById('ps-gpa').textContent      = gpa;
+            document.getElementById('ps-tasks').textContent    = total;
+            document.getElementById('ps-done').textContent     = done;
+            document.getElementById('ps-subjects').textContent = subCount;
+
+            // Form prefill
+            document.getElementById('profile-name').value    = name;
+            document.getElementById('profile-email').value   = email;
+            document.getElementById('profile-contact').value = contact;
+
+            // Info list
+            document.getElementById('pi-name').textContent    = name;
+            document.getElementById('pi-email').textContent   = email || 'Not set';
+            document.getElementById('pi-contact').textContent = contact || 'Not set';
+            document.getElementById('pi-gpa').textContent      = gpa + ' / 10.0';
+            document.getElementById('pi-tasks').textContent    = done + ' of ' + total;
+            document.getElementById('pi-subjects').textContent = subCount + ' subject' + (subCount !== 1 ? 's' : '');
+        })();
+
+        document.getElementById('save-profile-btn').addEventListener('click', function() {
+            var name  = document.getElementById('profile-name').value.trim();
+            var email = document.getElementById('profile-email').value.trim();
+
+            if (name) {
+                localStorage.setItem('userName', name);
+                // Refresh displayed values
+                document.getElementById('profile-hero-name').textContent  = name;
+                document.getElementById('sidebar-username').textContent   = name;
+                document.getElementById('pi-name').textContent            = name;
+                var parts = name.split(' ');
+                var av = parts.map(function(w){ return w[0]; }).join('').toUpperCase().slice(0,2);
+                document.getElementById('profile-hero-avatar').textContent = av;
+                document.getElementById('user-avatar').textContent         = av;
+            }
+            if (email) {
+                localStorage.setItem('userEmail', email);
+                document.getElementById('profile-hero-email').textContent = email;
+                document.getElementById('pi-email').textContent           = email;
+            }
+
+            var contact = document.getElementById('profile-contact').value.trim();
+            if (contact) {
+                var digitsOnly = contact.replace(/[\s\-]/g, '').replace(/^\+?91/, '');
+                if (!/^[6-9]\d{9}$/.test(digitsOnly)) {
+                    alert('Please enter a valid Indian mobile number (10 digits, starting with 6–9).');
+                    return;
+                }
+                localStorage.setItem('userContact', contact);
+                document.getElementById('pi-contact').textContent = contact;
+            }
+
+            var msg = document.getElementById('save-msg');
+            msg.classList.remove('hidden');
+            setTimeout(function(){ msg.classList.add('hidden'); }, 3000);
+        });
+
+        document.getElementById('logout-full-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('achievers_current_user');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

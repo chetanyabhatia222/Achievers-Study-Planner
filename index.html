@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Achievers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2 class="logo">Achievers</h2>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <span class="theme-icon" id="theme-icon">&#9790;</span>
+                </button>
+            </div>
+
+            <a href="profile.html" class="user-profile-section" id="user-profile-section">
+                <div class="user-avatar" id="user-avatar">CB</div>
+                <div class="user-details">
+                    <strong id="sidebar-username">Student</strong>
+                    <span class="user-details-email">View Profile</span>
+                </div>
+                <span class="profile-chevron">&#8250;</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <span class="sidebar-nav-label">Menu</span>
+                <a href="index.html" class="nav-link active" data-page="index">
+                    <span class="nav-link-icon">&#8962;</span>Dashboard
+                </a>
+                <a href="tasks.html" class="nav-link" data-page="tasks">
+                    <span class="nav-link-icon">&#10003;</span>My Tasks
+                </a>
+                <a href="timetable.html" class="nav-link" data-page="timetable">
+                    <span class="nav-link-icon">&#9783;</span>Timetable
+                </a>
+                <a href="notes.html" class="nav-link" data-page="notes">
+                    <span class="nav-link-icon">&#9998;</span>Notes
+                </a>
+                <a href="calculator.html" class="nav-link" data-page="calculator">
+                    <span class="nav-link-icon">&#8721;</span>Calculator
+                </a>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="login.html" class="sidebar-logout-btn" id="logout-link">
+                <span class="nav-link-icon">&#10148;</span>Logout
+            </a>
+
+            <div class="widget grades-widget">
+                <h3>Current GPA</h3>
+                <div class="gpa-display">
+                    <span class="gpa-score" id="gpa-score">--</span>
+                    <span class="gpa-label">/ 10.0</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <div class="welcome-section">
+                    <h1>Welcome, <span id="welcome-name">Student</span>!</h1>
+                    <p id="welcome-date"></p>
+                </div>
+                <div class="clock-widget">
+                    <div>
+                        <span class="clock-time" id="clock-time">00<span class="clock-colon">:</span>00<span class="clock-colon">:</span>00</span>
+                        <span class="clock-period" id="clock-period">AM</span>
+                    </div>
+                    <div class="clock-date" id="clock-date">Loading...</div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-tasks">0</span>
+                    <span class="stat-label">Total Tasks</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-completed">0</span>
+                    <span class="stat-label">Completed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-subjects">4</span>
+                    <span class="stat-label">Subjects</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-gpa">--</span>
+                    <span class="stat-label">GPA</span>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-grid">
+                    <a href="tasks.html" class="action-card">
+                        Tasks
+                    </a>
+                    <a href="timetable.html" class="action-card">
+                        Timetable
+                    </a>
+                    <a href="notes.html" class="action-card">
+                        My Notes
+                    </a>
+                    <a href="calculator.html" class="action-card">
+                        GPA Calculator
+                    </a>
+                    <a href="profile.html" class="action-card">
+                        My Profile
+                    </a>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <blockquote id="quote-text">"The secret of getting ahead is getting started."</blockquote>
+                <cite id="quote-author">- Mark Twain</cite>
+            </div>
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 <strong>Achievers</strong> Academic. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        var quotes = [
+            { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+            { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela" },
+            { text: "The beautiful thing about learning is that nobody can take it away from you.", author: "B.B. King" },
+            { text: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
+            { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+            { text: "The expert in anything was once a beginner.", author: "Helen Hayes" }
+        ];
+        var q = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById('quote-text').textContent = '"' + q.text + '"';
+        document.getElementById('quote-author').textContent = '- ' + q.author;
+
+        var name = localStorage.getItem('userName') || 'Student';
+        document.getElementById('welcome-name').textContent = name;
+
+        var totalTasks = localStorage.getItem('totalTasks') || '9';
+        var completedTasks = localStorage.getItem('completedTasks') || '0';
+        var totalSubjects = localStorage.getItem('totalSubjects') || '4';
+        var gpa = localStorage.getItem('currentGPA') || '--';
+
+        document.getElementById('stat-tasks').textContent = totalTasks;
+        document.getElementById('stat-completed').textContent = completedTasks;
+        document.getElementById('stat-subjects').textContent = totalSubjects;
+        document.getElementById('stat-gpa').textContent = gpa;
+    </script>
+</body>
+</html>

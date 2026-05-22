@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable - Achievers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2 class="logo">Achievers</h2>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <span class="theme-icon" id="theme-icon">&#9790;</span>
+                </button>
+            </div>
+
+            <a href="profile.html" class="user-profile-section" id="user-profile-section">
+                <div class="user-avatar" id="user-avatar">CB</div>
+                <div class="user-details">
+                    <strong id="sidebar-username">Student</strong>
+                    <span class="user-details-email">View Profile</span>
+                </div>
+                <span class="profile-chevron">&#8250;</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <span class="sidebar-nav-label">Menu</span>
+                <a href="index.html" class="nav-link" data-page="index">
+                    <span class="nav-link-icon">&#8962;</span>Dashboard
+                </a>
+                <a href="tasks.html" class="nav-link" data-page="tasks">
+                    <span class="nav-link-icon">&#10003;</span>My Tasks
+                </a>
+                <a href="timetable.html" class="nav-link active" data-page="timetable">
+                    <span class="nav-link-icon">&#9783;</span>Timetable
+                </a>
+                <a href="notes.html" class="nav-link" data-page="notes">
+                    <span class="nav-link-icon">&#9998;</span>Notes
+                </a>
+                <a href="calculator.html" class="nav-link" data-page="calculator">
+                    <span class="nav-link-icon">&#8721;</span>Calculator
+                </a>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="login.html" class="sidebar-logout-btn" id="logout-link">
+                <span class="nav-link-icon">&#10148;</span>Logout
+            </a>
+
+            <div class="widget grades-widget">
+                <h3>Current GPA</h3>
+                <div class="gpa-display">
+                    <span class="gpa-score" id="gpa-score">--</span>
+                    <span class="gpa-label">/ 10.0</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="dashboard-header" style="margin-bottom:0.5rem;">
+                <div class="welcome-section">
+                    <h1>Weekly Timetable</h1>
+                    <p style="color:var(--text-secondary);font-size:0.9rem;">Click any cell to fill in your class. Changes save automatically.</p>
+                </div>
+                <button class="add-note-btn" id="clear-all-tt" style="background:#e74c3c;">Clear All</button>
+            </div>
+
+            <div class="timetable-wrapper">
+                <table class="timetable-grid" id="timetable-table">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timetable-body">
+                        <!-- Built by timetable.js -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add / Edit Cell Modal -->
+    <div class="custom-modal hidden" id="tt-entry-modal">
+        <div class="custom-modal-card" style="max-width:380px;">
+            <div class="custom-modal-header">
+                <h3 id="tt-modal-title">Add Class</h3>
+                <button class="custom-modal-close" data-modal="tt-entry-modal">&times;</button>
+            </div>
+            <div class="custom-modal-body">
+                <label>Subject</label>
+                <select id="tt-subject-select" style="width:100%;padding:11px;border:1px solid var(--border);border-radius:6px;background:var(--bg-input);color:var(--text-primary);font-size:0.92rem;">
+                    <!-- Populated by JS -->
+                </select>
+                <label style="margin-top:12px;display:block;">Room / Location (optional)</label>
+                <input type="text" id="tt-room-input" placeholder="e.g. Room 204">
+            </div>
+            <div class="custom-modal-actions">
+                <button class="modal-cancel-btn" data-modal="tt-entry-modal">Cancel</button>
+                <button class="modal-confirm-btn" id="tt-save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clear All Confirm Modal -->
+    <div class="custom-modal hidden" id="tt-clear-modal">
+        <div class="custom-modal-card">
+            <div class="custom-modal-header">
+                <h3>Clear Timetable</h3>
+                <button class="custom-modal-close" data-modal="tt-clear-modal">&times;</button>
+            </div>
+            <div class="custom-modal-body">
+                <p class="modal-message">Clear the entire timetable?<br>All entries will be removed.</p>
+            </div>
+            <div class="custom-modal-actions">
+                <button class="modal-cancel-btn" data-modal="tt-clear-modal">Cancel</button>
+                <button class="modal-confirm-btn modal-danger" id="tt-clear-confirm-btn">Clear All</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 <strong>Achievers</strong> Academic. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="timetable.js"></script>
+</body>
+</html>

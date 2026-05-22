@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Achievers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <a href="index.html" class="back-btn">&#8592; Back to Dashboard</a>
+            <h1>About Us</h1>
+        </header>
+
+        <div class="page-body">
+            <div class="page-card">
+                <h2>Our Mission</h2>
+                <p>
+                    Achievers Academic Planner was built with a simple mission: to help students stay organized,
+                    focused, and on top of their academic journey. We believe that effective planning is the
+                    foundation of academic success.
+                </p>
+                <p>
+                    Our platform provides an intuitive task management system, subject tracking, and GPA
+                    calculation tools — all in one place. Whether you're managing assignments, tracking
+                    deadlines, or monitoring your grades, Achievers has you covered.
+                </p>
+            </div>
+
+            <div class="page-card">
+                <h2>What We Offer</h2>
+                <ul>
+                    <li>Subject-wise task management with priority levels</li>
+                    <li>Real-time progress tracking with visual progress bars</li>
+                    <li>Built-in GPA calculator with Indian grading system</li>
+                    <li>Dark and light theme for comfortable usage</li>
+                    <li>Clean, distraction-free interface</li>
+                </ul>
+            </div>
+
+            <div class="page-card">
+                <h2>Meet the Team</h2>
+                <p>Built by passionate CSE students who understand the struggles of academic life.</p>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">CB</div>
+                        <h4>Chetanya Bhatia</h4>
+                        <p>Task Management & UI</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">JB</div>
+                        <h4>Jivaj Bhatia</h4>
+                        <p>Sidebar & Layout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p>&copy; 2026 <strong>Achievers</strong> Academic. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        var theme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', theme);
+    </script>
+</body>
+</html>
